@@ -11,3 +11,6 @@ jobs:
          run: pip install pytest
        - name: Run tests
          run: pytest TP1/test.py
+       - run: echo "br1:${{github.ref}}"
+       - run: echo "repo1:${{github.repository}}."
+
