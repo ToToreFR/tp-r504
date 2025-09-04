@@ -3,6 +3,11 @@ def puissance(a,b):
      raise TypeError("Only integers are allowed")
   else:
      result = 1
-     for _ in range(b):
+     if b < 0: 
+       for _ in range(-b):
+         result *= a
+       return result 
+     else:
+       for _ in range(b):
         result *= a
-     return result if b < 0 else 1/result
+       return 1/result 
