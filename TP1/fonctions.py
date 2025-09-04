@@ -6,8 +6,8 @@ def puissance(a,b):
      if b < 0: 
        for _ in range(-b):
          result *= a
-       return result 
+       return 1/result
      else:
        for _ in range(b):
         result *= a
-       return 1/result 
+       return result
