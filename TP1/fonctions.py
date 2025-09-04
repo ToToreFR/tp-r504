@@ -2,4 +2,7 @@ def puissance(a,b):
  if not type(a) is int:
   raise TypeError("Only integers are allowed")
  else:
-  return(a**b)
+   result = 1
+    for _ in range(b):
+        result *= a
+    return result (b < 0)
