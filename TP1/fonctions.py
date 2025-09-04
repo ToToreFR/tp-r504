@@ -1,6 +1,3 @@
-import test_exc_1 as e
-
-
 def puissance(a,b):
   if not type(a) is int:
      raise TypeError("Only integers are allowed")
