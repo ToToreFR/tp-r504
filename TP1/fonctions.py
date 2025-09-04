@@ -1,11 +1,11 @@
-def test_exc_1():
-    with pytest.raises(Exception):
-        puissance(0,-1)
+import test_exc_1 as e
 
 
 def puissance(a,b):
   if not type(a) is int:
      raise TypeError("Only integers are allowed")
+  if a== 0 and b < 0:
+     raise Exception("mettre supérieur à 0")
   else:
      result = 1
      if b < 0: 
