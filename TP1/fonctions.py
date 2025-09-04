@@ -13,6 +13,6 @@ def puissance(a,b):
        return result
 
 def test_exc_1():
-   with pytest.raises(Exception):
-       puissance(0,-1)
-       puissance(0,2)
+    with pytest.raises(Exception):
+        puissance(0,-1)
+
