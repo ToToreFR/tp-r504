@@ -5,4 +5,4 @@ def puissance(a,b):
     result = 1
     for _ in range(b):
        result *= a
-    return result if b < 0 else 1/results
+    return result if b < 0 else 1/result
