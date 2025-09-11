@@ -5,29 +5,30 @@ app = Flask(__name__)
  
 # MySQL configuration
 db_config = {
-    'host': 'NOM-HOTE-SERVEUR',
+    'host': 'tp4-sql',
     'user': 'root',
     'password': 'foo',
-    'database': 'NOM-DE-LA-BDD'
+    'database': 'demosql'
 }
-
-# Initialize MySQL connection
-conn = mysql.connector.connect(**db_config)
-cursor = conn.cursor() 
 
 
 @app.route('/')
 def index():
-    # Sample query
-    query = "SELECT * FROM myTable"
-    cursor.execute(query)
-    data = cursor.fetchall()
+   try:
+     # Initialize MySQL connection
+     conn = mysql.connector.connect(**db_config)
+     cursor = conn.cursor() 
+   
+     # Sample query
+     query = "SELECT * FROM myTable"
+     cursor.execute(query)
+     data = cursor.fetchall()
+   finally:
+     # Close the cursor and connection
+     cursor.close()
+     conn.close()
     
-    # Close the cursor and connection
-    cursor.close()
-    conn.close()
-    
-    return render_template('index.html', data=data)
+   return render_template('index.html', data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
