@@ -5,7 +5,7 @@ public class ServeurUDP
 {
     public static void main( String[] args ) throws Exception
     {
-        DatagramSocket sock = new DatagramSocket(1234);
+     DatagramSocket sock = new DatagramSocket(1234);
         while(true)
         {
           System.out.println( "-Waiting data" );
@@ -13,13 +13,7 @@ public class ServeurUDP
           sock.receive(packet);
           String str = new String(packet.getData() );
           System.out.println( "str=" + str );
-          InetAddress addr = packet.getpacket
-
-          InetAddress clientAddr = packet.getAddress();
-          int clientPort = packet.getPort();
-          byte[] data = str.getBytes();
-          DatagramPacket response = new DatagramPacket(data, data.length, clientAddr, clientPort);
-          sock.send(response);
+          sock.send(packet);
         }
     }
 }
