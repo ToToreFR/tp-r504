@@ -1,4 +1,6 @@
 graph {
+node [image="icon_router.png" fixedsize="true" shape="none"];
+edge [fontsize="20pt" color="blue"];
 A [pos="10,5!"];
 B [pos="7,8!"];
 C [pos="7,4!"];
@@ -7,9 +9,6 @@ E [pos="5,1!"];
 F [pos="2,2!"];
 G [pos="1,6!"];
 H [pos="4,8!"];
-node [shape="star" style="filled" fillcolor="aqua"];
-edge [fontsize="20pt" color="red"];
-[image="icon_router.png" shape="none"];
 B--H [label="2"];
 B--G [label="4"];
 B--D [label="9"];
